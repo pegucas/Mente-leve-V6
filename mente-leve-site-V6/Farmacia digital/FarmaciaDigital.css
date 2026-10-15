@@ -1,0 +1,288 @@
+/* =========================================
+   CONFIGURAÇÕES GERAIS E FUNDO (PADRONIZADO)
+   ========================================= */
+body {
+    background: #405b9a;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding-bottom: 90px;
+    min-height: 100vh;
+}
+
+.app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    background: radial-gradient(circle at top left, #5cbdb9 0%, #6f7fb7 70%);
+    min-height: 100vh;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    padding: 20px;
+}
+
+/* =========================================
+   CABEÇALHO (LOGO E CARRINHO)
+   ========================================= */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-text i {
+    color: #00d2ff;
+    font-size: 1.5rem;
+}
+
+.cart-icon-wrapper {
+    position: relative;
+    color: #fff;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: #ff3b30;
+    color: white;
+    font-size: 0.65rem;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 5px;
+}
+
+/* =========================================
+   BARRA DE PESQUISA
+   ========================================= */
+.search-bar {
+    background-color: rgba(26, 34, 61, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 4px 15px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.search-bar i {
+    color: #a0abc0;
+    font-size: 1.2rem;
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+
+.search-bar input::placeholder {
+    color: #a0abc0;
+}
+
+/* =========================================
+   CATEGORIAS (SCROLL HORIZONTAL)
+   ========================================= */
+.categories-scroll {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.categories-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 75px;
+    cursor: pointer;
+}
+
+.category-icon-box {
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+    color: #e0e7ff;
+    transition: all 0.3s ease;
+}
+
+.category-item:hover .category-icon-box {
+    background: rgba(0, 210, 255, 0.15);
+    border-color: #00d2ff;
+}
+
+.category-name {
+    font-size: 0.75rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* =========================================
+   CARDS DE PRODUTOS (GRID)
+   ========================================= */
+.product-card {
+    background: rgba(23, 19, 58, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 15px;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-favorite {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #a0abc0;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    z-index: 2;
+}
+
+.btn-favorite:hover {
+    color: #ff4757;
+}
+
+.product-img-box {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.product-img-box i {
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.product-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.product-price {
+    font-size: 0.9rem;
+    color: #e0e7ff;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-add {
+    background: linear-gradient(90deg, #0099ff 0%, rgb(255, 166, 0, 0.914) 100%);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    flex-grow: 1;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-cart-outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+/* =========================================
+   MENU INFERIOR (CONSOLE)
+   ========================================= */
+.footer-console {
+    background: #5cbdb9;
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 480px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.nav-item-console {
+    color: #000000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    flex: 1;
+    padding: 10px 0;
+}
+
+.console-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    display: block;
+    margin-top: 3px;
+}
+
+.nav-item-console:hover,
+.nav-item-console.active {
+    color: #164752;
+}
+
+.console-main-btn {
+    position: relative;
+    top: -20px;
+}
+
+.main-btn-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00d2ff 0%, rgb(255, 166, 0, 0.914) 100%);
+    color: #ffffff;
+    margin: 0 auto;
+    border: 4px solid #405b9a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 110, 255, 0.4);
+}

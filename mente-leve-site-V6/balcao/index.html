@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mente Leve · Balcão</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="login-screen" class="login">
+    <div class="login-card">
+      <p class="eyebrow">Painel da loja</p>
+      <h1>Mente Leve<br /><em>Balcão</em></h1>
+      <p class="lede">Estoque vivo. Pedido do EuroCuida entra, a prateleira responde.</p>
+      <label>Farmácia
+        <input id="loja-nome" type="text" value="Farmácia São Judas · Parelheiros" />
+      </label>
+      <label>Senha da loja
+        <input id="loja-senha" type="password" placeholder="Senha de acesso" />
+      </label>
+      <button id="entrar" class="btn-primary">Abrir o balcão</button>
+      <p class="hint">Demo local — senha de acesso: farmacia123</p>
+      <a href="../index.html" class="ghost" style="text-align:center; margin-top:0.6rem; text-decoration:none; display:inline-block;">← Voltar à seleção</a>
+    </div>
+    <div class="login-side"></div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <aside class="rail">
+      <div class="brand">
+        <span class="dot"></span>
+        <strong>ML</strong>
+      </div>
+      <nav>
+        <button class="nav on" data-view="hoje">Hoje</button>
+        <button class="nav" data-view="estoque">Estoque</button>
+        <button class="nav" data-view="pedidos">Pedidos</button>
+        <button class="nav" data-view="euro">EuroCuida</button>
+      </nav>
+      <button id="sair" class="ghost">Sair</button>
+      <a href="../index.html" class="ghost" style="text-align:center; text-decoration:none; margin-top:0.4rem;">← Voltar à seleção</a>
+    </aside>
+
+    <main>
+      <header class="top">
+        <div>
+          <p class="eyebrow" id="loja-label">—</p>
+          <h2 id="view-title">Hoje</h2>
+        </div>
+        <div class="pulse">
+          <span class="live"></span>
+          Estoque ao vivo
+        </div>
+      </header>
+
+      <section id="view-hoje" class="view">
+        <div class="stats">
+          <article>
+            <span>Pedidos na janela</span>
+            <b id="stat-pedidos">0</b>
+          </article>
+          <article class="warn">
+            <span>Ruptura agora</span>
+            <b id="stat-ruptura">0</b>
+          </article>
+          <article>
+            <span>SKUs no balcão</span>
+            <b id="stat-skus">0</b>
+          </article>
+          <article>
+            <span>EuroCuida hoje</span>
+            <b id="stat-euro">0</b>
+          </article>
+        </div>
+        <div class="split">
+          <div class="panel">
+            <h3>Fila da receita</h3>
+            <ul id="fila-receita" class="feed"></ul>
+          </div>
+          <div class="panel">
+            <h3>O que vai acabar</h3>
+            <ul id="fila-ruptura" class="feed"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="view-estoque" class="view hidden">
+        <div class="toolbar">
+          <input id="busca" type="search" placeholder="Buscar princípio, marca, EAN…" />
+          <button id="abrir-novo" class="btn-primary">+ Produto</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Produto</th>
+                <th>Programa</th>
+                <th>Un.</th>
+                <th>Mínimo</th>
+                <th>Preço</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="view-pedidos" class="view hidden">
+        <div class="orders" id="lista-pedidos"></div>
+      </section>
+
+      <section id="view-euro" class="view hidden">
+        <div class="euro-hero">
+          <p class="eyebrow">Parceria</p>
+          <h3>Paciente EuroCuida encontra esta loja.</h3>
+          <p>Quando o SKU do programa zera, o mapa some vocês. O estoque aqui é o que segura a adesão.</p>
+        </div>
+        <div class="stats">
+          <article>
+            <span>Pacientes na lista</span>
+            <b>18</b>
+          </article>
+          <article>
+            <span>Retiradas no prazo</span>
+            <b>14</b>
+          </article>
+          <article class="warn">
+            <span>Atrasou / rompeu</span>
+            <b>4</b>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="modal">
+    <form id="form-produto" method="dialog">
+      <h3 id="modal-title">Novo produto</h3>
+      <input type="hidden" id="edit-id" />
+      <label>Nome
+        <input id="p-nome" required placeholder="Losartana 50mg" />
+      </label>
+      <label>Marca / laboratório
+        <input id="p-marca" placeholder="Eurofarma" />
+      </label>
+      <div class="row">
+        <label>Unidades
+          <input id="p-qtd" type="number" min="0" value="12" />
+        </label>
+        <label>Mínimo
+          <input id="p-min" type="number" min="0" value="4" />
+        </label>
+        <label>Preço R$
+          <input id="p-preco" type="number" min="0" step="0.01" value="8.90" />
+        </label>
+      </div>
+      <label class="check">
+        <input id="p-euro" type="checkbox" /> SKU do EuroCuida / contínuo
+      </label>
+      <menu>
+        <button value="cancel" class="ghost" type="button" id="cancelar">Cancelar</button>
+        <button class="btn-primary" id="salvar">Salvar no estoque</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="js/app.js"></script>
+  <!-- VLibras -->
+  <link rel="stylesheet" href="../vlibras-copia/widget-mente-leve.css">
+  <script src="../vlibras-copia/widget-mente-leve.js" defer></script>
+</body>
+</html>

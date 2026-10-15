@@ -1,0 +1,24 @@
+/* Faixa Mente Leve sobre o widget oficial VLibras (governo) */
+.ml-libras-tag {
+  position: fixed;
+  right: 16px;
+  bottom: 92px;
+  z-index: 99990;
+  background: #0d2219;
+  color: #7ddb8c;
+  font-family: system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #1e3d30;
+  pointer-events: none;
+}
+.ml-libras-tag span {
+  color: #f3f0e6;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}

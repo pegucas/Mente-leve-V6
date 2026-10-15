@@ -1,0 +1,97 @@
+ body {
+     background: #405b9a;
+     font-family: 'Segoe UI', sans-serif;
+     color: #ffffff;
+     margin: 0;
+     min-height: 100vh;
+ }
+
+ .app-container {
+     max-width: 480px;
+     margin: 0 auto;
+     background: radial-gradient(circle at top left, #5cbdb9 0%, #6f7fb7 70%);
+     min-height: 100vh;
+     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+     padding: 20px;
+     display: flex;
+     flex-direction: column;
+ }
+
+ .top-header {
+     display: flex;
+     align-items: center;
+     margin-bottom: 30px;
+ }
+
+ .btn-back {
+     color: #ffffff;
+     font-size: 1.5rem;
+     text-decoration: none;
+     margin-right: 15px;
+ }
+
+ .header-title {
+     font-size: 1.2rem;
+     font-weight: 600;
+     color: #ffffff;
+ }
+
+ .settings-group {
+     background: #15262e;
+     border: 1px solid rgba(255, 255, 255, 0.05);
+     border-radius: 16px;
+     overflow: hidden;
+     margin-bottom: 25px;
+ }
+
+ .settings-item {
+     padding: 18px 20px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+     color: #ffffff;
+     text-decoration: none;
+     transition: background 0.2s;
+ }
+
+ .settings-item:last-child {
+     border-bottom: none;
+ }
+
+ .settings-item:hover {
+     background: #233845;
+     color: #fff;
+ }
+
+ .item-left {
+     display: flex;
+     align-items: center;
+     gap: 15px;
+     font-size: 1rem;
+     font-weight: 500;
+ }
+
+ .item-left i {
+     color: #5cbdb9;
+     font-size: 1.3rem;
+ }
+
+ /* Switch nas cores do novo tema */
+ .form-check-input:checked {
+     background-color: rgb(255, 166, 0);
+     border-color: rgb(255, 166, 0);
+ }
+
+ .form-check-input {
+     background-color: rgba(255, 255, 255, 0.3);
+     border-color: rgba(255, 255, 255, 0.1);
+     width: 2.8em;
+     height: 1.4em;
+     cursor: pointer;
+ }
+
+ .form-switch {
+     padding-left: 0;
+     margin-bottom: 0;
+ }

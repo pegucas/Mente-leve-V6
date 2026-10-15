@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mente Leve · EuroCuida</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #07140f;
+      --card: #12281e;
+      --line: #1e3d30;
+      --ink: #f3f0e6;
+      --dim: #8eaa9a;
+      --green: #7ddb8c;
+      --serif: "Instrument Serif", Georgia, serif;
+      --sans: "Geist", "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+    }
+    .pitch {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.75rem;
+      color: var(--green);
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.05;
+      font-weight: 400;
+      margin-bottom: 1.8rem;
+    }
+    .tiles {
+      list-style: none;
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .tiles li {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.1rem 1.2rem;
+    }
+    .tiles b { display: block; margin-bottom: 0.3rem; color: var(--green); }
+    .tiles span { color: var(--dim); font-size: 0.95rem; }
+    .back {
+      display: inline-block;
+      margin-top: 1rem;
+      color: var(--dim);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .back:hover { color: var(--ink); }
+    .go {
+      background: var(--green);
+      color: #06210f;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.9rem 1.4rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="pitch">
+    <p class="kicker">Por que a indústria entra</p>
+    <h2>O desconto do EuroCuida<br />não pode morrer no balcão.</h2>
+    <ul class="tiles">
+      <li><b>Adesão</b><span>2º mês sai da farmácia do distrito, não só do site.</span></li>
+      <li><b>Sell-out</b><span>Loja pequena vira ponto oficial do programa.</span></li>
+      <li><b>Sinal</b><span>Ruptura do SKU aparece no mesmo dia.</span></li>
+      <li><b>Jogo certo</b><span>Balconista cadastra estoque em 4 segundos.</span></li>
+    </ul>
+    <a href="balcao/index.html" class="go">Abrir o balcão e jogar o turno</a>
+    <br />
+    <a href="index.html" class="back">← Voltar à seleção</a>
+  </div>
+
+  <link rel="stylesheet" href="vlibras-copia/widget-mente-leve.css">
+  <script src="vlibras-copia/widget-mente-leve.js" defer></script>
+</body>
+</html>
